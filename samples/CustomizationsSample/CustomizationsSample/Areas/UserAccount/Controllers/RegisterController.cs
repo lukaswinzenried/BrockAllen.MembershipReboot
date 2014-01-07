@@ -56,5 +56,11 @@ namespace BrockAllen.MembershipReboot.Mvc.Areas.UserAccount.Controllers
             this.userAccountService.CancelVerification(id);
             return View("Cancel");
         }
+
+        public ActionResult Confirm(string id)
+        {
+            this.userAccountService.VerifyEmailFromKey(id);
+            return View("Success");
+        }
     }
 }
